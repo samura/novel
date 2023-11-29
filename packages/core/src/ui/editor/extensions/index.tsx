@@ -1,21 +1,21 @@
-import StarterKit from "@tiptap/starter-kit";
-import HorizontalRule from "@tiptap/extension-horizontal-rule";
-import TiptapLink from "@tiptap/extension-link";
-import TiptapImage from "@tiptap/extension-image";
-import Placeholder from "@tiptap/extension-placeholder";
-import TiptapUnderline from "@tiptap/extension-underline";
-import TextStyle from "@tiptap/extension-text-style";
+import UploadImagesPlugin from "@/ui/editor/plugins/upload-images";
+import { InputRule } from "@tiptap/core";
 import { Color } from "@tiptap/extension-color";
+import Highlight from "@tiptap/extension-highlight";
+import HorizontalRule from "@tiptap/extension-horizontal-rule";
+import TiptapImage from "@tiptap/extension-image";
+import TiptapLink from "@tiptap/extension-link";
+import Placeholder from "@tiptap/extension-placeholder";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
+import TextStyle from "@tiptap/extension-text-style";
+import TiptapUnderline from "@tiptap/extension-underline";
+import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
-import Highlight from "@tiptap/extension-highlight";
-import SlashCommand from "./slash-command";
-import { InputRule } from "@tiptap/core";
-import UploadImagesPlugin from "@/ui/editor/plugins/upload-images";
-import UpdatedImage from "./updated-image";
 import CustomKeymap from "./custom-keymap";
 import DragAndDrop from "./drag-and-drop";
+import SlashCommand from "./slash-command";
+import UpdatedImage from "./updated-image";
 
 export const defaultExtensions = [
   StarterKit.configure({
@@ -135,7 +135,7 @@ export const defaultExtensions = [
     nested: true,
   }),
   Markdown.configure({
-    html: false,
+    html: true,
     transformCopiedText: true,
     transformPastedText: true,
   }),
